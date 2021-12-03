@@ -1,9 +1,20 @@
 if (typeof importScripts === 'function') {
-  importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js');
+  // workbox ver 5 release
+  // importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js');
+  // workbox ver 6 release
+  importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.2/workbox-sw.js');
   /* global workbox */
   if (workbox) {
     console.log('Workbox is loaded');
-    workbox.core.skipWaiting();
+    // workbox ver 5 release
+    // workbox.core.skipWaiting();
+    // workbox ver 6 release
+    // update skipWaiting()
+    addEventListener('message', (event) => {
+      if (event.data && event.data.type === 'SKIP_WAITING') {
+        skipWaiting();
+      }
+    });
 
     /* injection point for manifest files.  */
     workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
