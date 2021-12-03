@@ -213,6 +213,7 @@ module.exports = {
     // }),
     new CopyWebpackPlugin([
       { from: commonPaths.manifest, to: commonPaths.outputPath },
+      { from: commonPaths._redirects, to: commonPaths.outputPath },
     ]),
     new CompressionPlugin({
       filename: "[path].gz[query]",

@@ -17,6 +17,7 @@ module.exports = {
   ),
   assetManifest: path.resolve(__dirname, "../", "public/asset-manifest.json"),
   manifest: path.resolve(__dirname, "../", "public/manifest.json"),
+  _redirects: path.resolve(__dirname, "../", "public/_redirects"),
   antdModifyVar: {
     "primary-color": "#1DA57A",
     "link-color": "#1DA57A",
