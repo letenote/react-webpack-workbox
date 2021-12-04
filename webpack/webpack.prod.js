@@ -14,7 +14,7 @@ module.exports = {
   mode: "production",
   output: {
     filename: `${commonPaths.jsFolder}/[name].[hash].js`,
-    path: commonPaths.outputPath,
+    path: commonPaths.outputPath_prod,
     publicPath: '/',
     chunkFilename: `${commonPaths.jsFolder}/[name].[chunkhash].js`,
   },
@@ -212,8 +212,8 @@ module.exports = {
     //   staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
     // }),
     new CopyWebpackPlugin([
-      { from: commonPaths.manifest, to: commonPaths.outputPath },
-      { from: commonPaths._redirects, to: commonPaths.outputPath },
+      { from: commonPaths.manifest, to: commonPaths.outputPath_prod },
+      { from: commonPaths._redirects, to: commonPaths.outputPath_prod },
     ]),
     new CompressionPlugin({
       filename: "[path].gz[query]",
