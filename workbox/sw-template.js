@@ -1,4 +1,5 @@
 if (typeof importScripts === 'function') {
+  // see doc => https://developers.google.com/web/tools/workbox/modules/workbox-sw
   // workbox ver 5 release
   // importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js');
   // workbox ver 6 release
@@ -6,6 +7,17 @@ if (typeof importScripts === 'function') {
   /* global workbox */
   if (workbox) {
     console.log('Workbox is loaded');
+    workbox.setConfig({
+      debug: true
+    })
+
+    workbox.core.setCacheNameDetails({
+      prefix: 'custom-my-app',
+      suffix: 'custom-v1',
+      precache: 'custom-precache-name',
+      runtime: 'custom-runtime-name',
+      googleAnalytics: 'custom-google-analytics-name'
+    });
     // workbox ver 5 release
     // workbox.core.skipWaiting();
     // workbox ver 6 release
@@ -23,7 +35,7 @@ if (typeof importScripts === 'function') {
      workbox.routing.registerRoute(
       new workbox.routing.NavigationRoute(
         new workbox.strategies.NetworkFirst({
-          cacheName: 'PRODUCTION',
+          cacheName: 'custom-register-route-name',
         })
       )
     );
