@@ -63,7 +63,7 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: commonPaths.outputPath,
+    contentBase: commonPaths.outputPath_dev,
     compress: true,
     historyApiFallback: true,
     hot: true,
