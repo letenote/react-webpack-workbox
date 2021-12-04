@@ -95,7 +95,7 @@ module.exports = {
     // runtimeChunk: true,
     // update in oct 2020
     runtimeChunk: {
-      name: "manifest",
+      name: "chunk",
     },
   },
 
