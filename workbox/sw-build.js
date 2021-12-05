@@ -9,7 +9,7 @@ const buildSW = () => {
       swDest: 'build/service-worker.js',
       globDirectory: 'build',
       // precaching jpg files
-      globPatterns: ["**/*.{css,js,html,jpg,jpeg,png,ico,webp}"],
+      globPatterns: ["**/*.{css,js,html,ttf,jpg,jpeg,png,ico,webp}"],
     })
     .then(({ count, size, warnings }) => {
       // Optionally, log any warnings and details.

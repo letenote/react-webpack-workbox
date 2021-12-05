@@ -5,7 +5,7 @@ module.exports = {
   mode: "development",
   output: {
     filename: "[name].js",
-    path: commonPaths.outputPath,
+    path: commonPaths.outputPath_dev,
     publicPath: '/',
     chunkFilename: "[name].js",
   },
@@ -53,12 +53,6 @@ module.exports = {
           },
           "sass-loader",
         ],
-      },
-      {
-        test: /\.(svg|png|jpe?g|gif)$/i,
-        use: {
-          loader: "url-loader",
-        },
       },
     ],
   },

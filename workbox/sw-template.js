@@ -27,7 +27,10 @@ if (typeof importScripts === 'function') {
         skipWaiting();
       }
     });
-
+    workbox.routing.registerRoute(
+      ({request}) => request.destination === 'image' || request.destination === 'font',
+      new workbox.strategies.CacheFirst()
+    );
     /* injection point for manifest files.  */
     workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
 
