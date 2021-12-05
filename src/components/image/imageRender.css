@@ -1,0 +1,50 @@
+.fullSize,
+.smooth-image-wrapper,
+.smooth-image-wrapper .smooth-image,
+.smooth-image-wrapper .smooth-no-image,
+.smooth-image-wrapper .smooth-preloader,
+.smooth-image-wrapper .smooth-preloader .loader {
+  width: 100%;
+  height: 100%;
+}
+.smooth-image-wrapper {
+  position: relative;
+}
+.smooth-image-wrapper .smooth-image {
+  transition: opacity 1s;
+}
+.smooth-image-wrapper .smooth-no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcfcfc;
+  text-transform: capitalize;
+  color: black;
+}
+.smooth-image-wrapper .img-visible {
+  opacity: 1;
+}
+.smooth-image-wrapper .img-hidden {
+  opacity: 0;
+}
+@keyframes preloader-block {
+  from {
+    background-position: 0%, 0;
+  }
+  to {
+    background-position: 170%, 0;
+  }
+}
+.smooth-image-wrapper .smooth-preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background: rgba(245, 245, 245, 0.34); */
+  background: transparent;
+}
+.smooth-image-wrapper .smooth-preloader .loader {
+  /* background-image: linear-gradient(to right, #e6e6e6, #fff, #e6e6e6); */
+  display: inline-block;
+  background-size: 200%;
+  animation: preloader-block 2s linear 0s infinite reverse forwards;
+}
