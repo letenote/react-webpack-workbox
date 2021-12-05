@@ -27,7 +27,6 @@ if (typeof importScripts === 'function') {
         skipWaiting();
       }
     });
-
     /* injection point for manifest files.  */
     workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
 
