@@ -28,8 +28,16 @@ if (typeof importScripts === 'function') {
       }
     });
     workbox.routing.registerRoute(
-      ({request}) => request.destination === 'image' || request.destination === 'font',
-      new workbox.strategies.CacheFirst()
+      ({request}) => request.destination === 'image',
+      new workbox.strategies.CacheFirst({
+        cacheName: 'custom-image-route-name',
+      })
+    );
+    workbox.routing.registerRoute(
+      ({request}) => request.destination === 'font',
+      new workbox.strategies.CacheFirst({
+        cacheName: 'custom-font-route-name',
+      })
     );
     /* injection point for manifest files.  */
     workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
